@@ -1,42 +1,42 @@
 # Changelog
 
-Semua perubahan penting pada proyek "Django Admin Dashboard" akan didokumentasikan dalam file ini.
+All significant changes to the "Django Admin Dashboard" project will be documented in this file.
 
 ## [1.0.0] - 2025-02-25
 
-### Ditambahkan
-- Halaman login dengan autentikasi melalui API
-- Halaman dashboard utama dengan navigasi sidebar
-- Sistem autentikasi dan manajemen token
-- Koneksi ke backend API Django
-- Implementasi template dasar Bootstrap 5
-- Styling CSS kustom untuk login dan dashboard
-- JavaScript dasar untuk interaksi pengguna
-- Sistem penyimpanan token di session
-- Dokumentasi dasar proyek
+### Added
+- Login page with authentication via API
+- Main dashboard page with sidebar navigation
+- Authentication and token management system
+- Connection to Django backend API
+- Basic Bootstrap 5 template implementation
+- Custom CSS styling for login and dashboard
+- Basic JavaScript for user interactions
+- Token storage system in session
+- Basic project documentation
 
-### Perubahan Teknis
-- Menggunakan Django 4.x sebagai framework frontend
-- Implementasi requests library untuk komunikasi API
-- Menggunakan python-dotenv untuk variabel lingkungan
-- Setup direktori statis dan template
+### Technical Changes
+- Using Django 4.x as the frontend framework
+- Implemented requests library for API communication
+- Using python-dotenv for environment variables
+- Setup for static directories and templates
 
-## Catatan untuk Pengembangan Selanjutnya
+## Notes for Future Development
 
-### Fitur yang Direncanakan
-- [ ] Halaman profil pengguna
-- [ ] Halaman manajemen pengguna (CRUD)
-- [ ] Halaman laporan dengan grafik dan visualisasi data
-- [ ] Sistem notifikasi real-time
-- [ ] Pengaturan preferensi pengguna
-- [ ] Mode gelap/terang
-- [ ] Eksport data ke format CSV/Excel
-- [ ] Filter dan pencarian lanjutan
+### Planned Features
+- [ ] User profile page
+- [ ] User management page (CRUD)
+- [ ] Report page with charts and data visualization
+- [ ] Real-time notification system
+- [ ] User preference settings
+- [ ] Dark/light mode toggle
+- [ ] Data export to CSV/Excel format
+- [ ] Advanced filtering and search functionality
 
-### Perbaikan yang Direncanakan
-- [ ] Optimasi performa untuk pemuatan data besar
-- [ ] Implementasi caching untuk mengurangi panggilan API
-- [ ] Validasi formulir yang lebih baik
-- [ ] Penanganan kesalahan yang lebih baik
-- [ ] Penambahan unit test
-- [ ] Implementasi CI/CD pipeline
+### Planned Improvements
+- [ ] Performance optimization for large data loading
+- [ ] Caching implementation to reduce API calls
+- [ ] Enhanced form validation
+- [ ] Improved error handling
+- [ ] Addition of unit tests
+- [ ] Implementation of CI/CD pipeline

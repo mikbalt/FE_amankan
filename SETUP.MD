@@ -1,46 +1,54 @@
-# Panduan Setup Django Admin Dashboard
+# Django Admin Dashboard Setup Guide
 
-Dokumen ini berisi instruksi detail untuk menyiapkan dan menjalankan aplikasi Django Admin Dashboard dari awal hingga siap digunakan.
+This document provides detailed instructions on how to set up and run the Django Admin Dashboard application from scratch.
 
-## Prasyarat
+---
 
-Sebelum memulai, pastikan sistem Anda telah memenuhi prasyarat berikut:
+## Prerequisites
 
-1. **Python 3.8 atau lebih tinggi** - [Unduh Python](https://www.python.org/downloads/)
+Before starting, make sure your system meets the following requirements:
+
+1. **Python 3.8 or higher** - [Download Python](https://www.python.org/downloads/)
 2. **pip** (Python package manager)
-3. **git** - [Unduh Git](https://git-scm.com/downloads)
-4. **Backend API Django** yang sudah berjalan
+3. **git** - [Download Git](https://git-scm.com/downloads)
+4. **Django Backend API** running and accessible
 
-## Langkah 1: Clone Repositori
+---
+
+## Step 1: Clone the Repository
 
 ```bash
 git clone https://github.com/yourusername/django-admin-dashboard.git
 cd django-admin-dashboard
 ```
 
-## Langkah 2: Persiapan Lingkungan Virtual
+---
 
-### Untuk Windows
+## Step 2: Set Up Virtual Environment
+
+### For Windows
 
 ```bash
 python -m venv venv
 venv\Scripts\activate
 ```
 
-### Untuk macOS/Linux
+### For macOS/Linux
 
 ```bash
 python3 -m venv venv
 source venv/bin/activate
 ```
 
-## Langkah 3: Install Dependensi
+---
+
+## Step 3: Install Dependencies
 
 ```bash
 pip install -r requirements.txt
 ```
 
-Jika file `requirements.txt` belum ada, buat dengan konten berikut:
+If `requirements.txt` is not available, create one with the following content:
 
 ```
 django==4.2.9
@@ -48,9 +56,11 @@ requests==2.31.0
 python-dotenv==1.0.0
 ```
 
-## Langkah 4: Konfigurasi Lingkungan
+---
 
-Buat file `.env` di direktori root proyek dengan konten berikut:
+## Step 4: Environment Configuration
+
+Create a `.env` file in the root directory of the project with the following content:
 
 ```
 DEBUG=True
@@ -58,118 +68,150 @@ SECRET_KEY=change-this-to-a-secure-random-string
 API_BASE_URL=http://your-backend-api-url
 ```
 
-Pastikan untuk mengganti `SECRET_KEY` dengan string random yang aman dan `API_BASE_URL` dengan URL API backend Anda.
+Make sure to replace `SECRET_KEY` with a secure random string and `API_BASE_URL` with your backend API URL.
 
-## Langkah 5: Jalankan Migrasi Database
+---
 
-Meskipun proyek ini terutama berperan sebagai frontend, Django masih memerlukan beberapa tabel database dasar:
+## Step 5: Apply Database Migrations
+
+Although this project mainly acts as a frontend, Django still requires some basic database tables:
 
 ```bash
 python manage.py migrate
 ```
 
-## Langkah 6: Jalankan Server Pengembangan
+---
+
+## Step 6: Run Development Server
 
 ```bash
 python manage.py runserver
 ```
 
-Aplikasi sekarang dapat diakses di http://127.0.0.1:8000/login/
+The application will now be accessible at http://127.0.0.1:8000/login/
 
-## Langkah 7: Verifikasi Koneksi ke Backend API
+---
 
-Pastikan bahwa backend API Anda berjalan dan dapat diakses dari aplikasi frontend. Anda dapat menguji koneksi dengan mencoba login menggunakan kredensial yang valid.
+## Step 7: Verify Connection to Backend API
 
-## Konfigurasi Tambahan
+Ensure that your backend API is running and accessible from the frontend application. You can test the connection by attempting to log in using valid credentials.
 
-### Mengubah Port Server
+---
 
-Jika port 8000 sudah digunakan, Anda dapat menjalankan server di port lain:
+---
+
+## Additional Configuration
+
+### Changing Server Port
+
+If port 8000 is already in use, you can run the server on another port:
 
 ```bash
 python manage.py runserver 8080
 ```
 
-### Mengakses dari Perangkat Lain di Jaringan
+---
 
-Untuk mengakses server dari perangkat lain di jaringan yang sama:
+### Accessing from Other Devices on the Network
+
+To access the server from other devices on the same network:
 
 ```bash
 python manage.py runserver 0.0.0.0:8000
 ```
 
-Kemudian akses melalui IP komputer Anda, misalnya: http://192.168.1.100:8000
+Then, access using your computer's IP address, e.g., http://192.168.1.100:8000
 
-### Mengkonfigurasi Static Files untuk Produksi
+---
 
-Untuk environment produksi, jalankan:
+### Configuring Static Files for Production
+
+For production environments, run:
 
 ```bash
 python manage.py collectstatic
 ```
 
-## Struktur Database API Backend yang Diperlukan
+---
 
-Backend API harus menyediakan endpoint berikut:
+## Required Backend API Structure
 
-1. **Autentikasi**
-   - POST `/auth/login/` - Untuk login (menerima username dan password, mengembalikan token)
-   - POST `/auth/logout/` - Untuk logout (opsional)
+The backend API should provide the following endpoints:
 
-2. **Data Dashboard**
-   - GET `/dashboard/data/` - Untuk mendapatkan data dashboard utama
+1. **Authentication**
+   - POST `/auth/login/` - For logging in (accepts username and password, returns a token)
+   - POST `/auth/logout/` - For logging out (optional)
 
-Setiap endpoint API harus mengembalikan respons dalam format JSON.
+2. **Dashboard Data**
+   - GET `/dashboard/data/` - To get main dashboard data
+
+Each API endpoint should return responses in JSON format.
+
+---
 
 ## Troubleshooting
 
-### Masalah Koneksi API
+### API Connection Issues
 
-Jika Anda mengalami masalah koneksi ke backend API:
+If you encounter issues connecting to the backend API:
 
-1. Periksa apakah URL API benar di file `.env`
-2. Pastikan backend API berjalan
-3. Periksa apakah ada masalah CORS dengan mengaktifkan CORS di backend
+1. Check if the API URL is correct in the `.env` file
+2. Ensure the backend API is running
+3. Check for CORS issues by enabling CORS on the backend
 
-### Masalah Static Files
+---
 
-Jika file statis tidak dimuat dengan benar:
+### Static Files Not Loading
 
-1. Periksa konfigurasi STATIC_URL dan STATICFILES_DIRS di `settings.py`
-2. Pastikan file ada di lokasi yang benar
-3. Jalankan `python manage.py collectstatic`
+If static files are not loading correctly:
+
+1. Check the `STATIC_URL` and `STATICFILES_DIRS` configuration in `settings.py`
+2. Make sure the files are in the correct location
+3. Run `python manage.py collectstatic`
+
+---
 
 ### Error "ModuleNotFoundError"
 
-Jika Anda melihat error ini, pastikan semua dependensi telah diinstal:
+If you see this error, make sure all dependencies are installed:
 
 ```bash
 pip install -r requirements.txt
 ```
 
-## Deployment ke Produksi
+---
 
-Untuk deployment produksi, tambahan langkah-langkah berikut direkomendasikan:
+## Production Deployment
 
-1. Ubah `DEBUG=False` di file `.env`
-2. Gunakan server WSGI seperti Gunicorn:
+For production deployment, the following additional steps are recommended:
+
+1. Change `DEBUG=False` in the `.env` file
+2. Use a WSGI server like Gunicorn:
    ```bash
    pip install gunicorn
    gunicorn admin_dashboard.wsgi:application
    ```
-3. Konfigurasikan Nginx atau Apache sebagai reverse proxy
-4. Aktifkan HTTPS menggunakan sertifikat SSL
-5. Konfigurasi file statis untuk dilayani oleh web server
+3. Configure Nginx or Apache as a reverse proxy
+4. Enable HTTPS using SSL certificates
+5. Configure static files to be served by the web server
 
-## Sumber Daya Tambahan
+---
 
-- [Dokumentasi Django](https://docs.djangoproject.com/)
-- [Dokumentasi Django REST framework](https://www.django-rest-framework.org/) (untuk backend)
-- [Dokumentasi Bootstrap](https://getbootstrap.com/docs/)
+## Additional Resources
 
-## Kontak Bantuan
+- [Django Documentation](https://docs.djangoproject.com/)
+- [Django REST framework Documentation](https://www.django-rest-framework.org/) (for backend)
+- [Bootstrap Documentation](https://getbootstrap.com/docs/)
 
-Jika Anda mengalami masalah yang tidak tercakup dalam panduan ini, silakan hubungi:
+---
 
-- Email: support@example.com
-- GitHub Issues: Buat issue baru di repositori
+## Support and Contact
+
+If you encounter issues not covered in this guide, please contact:
+
+- Email: ikbaltaqyudin@gmail.com
+- GitHub Issues: Create a new issue on the repository
+
+---
+
+Happy coding! 🚀

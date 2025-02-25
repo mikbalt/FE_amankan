@@ -1,101 +1,111 @@
-# Panduan Kontribusi
+# Contribution Guide
 
-Terima kasih atas minat Anda untuk berkontribusi pada proyek Django Admin Dashboard! Dokumen ini berisi informasi penting tentang cara Anda dapat berkontribusi pada proyek ini.
+Thank you for your interest in contributing to the Django Admin Dashboard project! This document contains essential information on how you can contribute to this project.
 
-## Cara Berkontribusi
+---
 
-1. **Fork Repositori**
+## How to Contribute
+
+1. **Fork the Repository**
    
-   Mulailah dengan melakukan fork pada repositori ini ke akun GitHub Anda.
+   Start by forking this repository to your GitHub account.
 
-2. **Clone Repositori**
+2. **Clone the Repository**
    
    ```bash
    git clone https://github.com/yourusername/django-admin-dashboard.git
    cd django-admin-dashboard
    ```
 
-3. **Buat Branch Baru**
+3. **Create a New Branch**
    
    ```bash
-   git checkout -b feature/nama-fitur
+   git checkout -b feature/feature-name
    ```
-   atau
+   or
    ```bash
-   git checkout -b fix/nama-bug
+   git checkout -b fix/bug-name
    ```
 
-4. **Lakukan Perubahan**
+4. **Make Changes**
    
-   Lakukan perubahan yang diperlukan dan pastikan kode Anda mengikuti pedoman gaya kode proyek.
+   Make the necessary changes and ensure your code follows the project's coding guidelines.
 
-5. **Commit Perubahan**
-   
-   ```bash
-   git commit -m "Deskripsi perubahan yang dilakukan"
-   ```
-
-6. **Push ke Branch**
+5. **Commit the Changes**
    
    ```bash
-   git push origin feature/nama-fitur
+   git commit -m "Description of the changes made"
    ```
 
-7. **Buat Pull Request**
+6. **Push to the Branch**
    
-   Buka halaman GitHub repositori yang Anda fork dan klik tombol "New Pull Request".
+   ```bash
+   git push origin feature/feature-name
+   ```
 
-## Pedoman Kode
-
-- Ikuti [PEP 8](https://www.python.org/dev/peps/pep-0008/) untuk gaya kode Python
-- Gunakan indentasi 4 spasi (bukan tab)
-- Berikan nama yang deskriptif untuk fungsi, variabel, dan kelas
-- Tambahkan komentar yang jelas untuk kode yang kompleks
-- Pisahkan logika bisnis dari kode tampilan
-
-## Proses Pull Request
-
-1. **Review Kode**
+7. **Create a Pull Request**
    
-   Setiap pull request akan ditinjau oleh maintainer proyek. Mereka mungkin akan memberikan masukan atau meminta perubahan.
+   Go to the GitHub page of your forked repository and click on "New Pull Request".
+
+---
+
+## Code Guidelines
+
+- Follow [PEP 8](https://www.python.org/dev/peps/pep-0008/) for Python code style
+- Use 4 spaces for indentation (not tabs)
+- Use descriptive names for functions, variables, and classes
+- Add clear comments for complex code logic
+- Separate business logic from the view code
+
+---
+
+## Pull Request Process
+
+1. **Code Review**
+   
+   Every pull request will be reviewed by the project maintainer. They might provide feedback or request changes.
 
 2. **CI/CD Checks**
    
-   Pull request harus lolos semua pemeriksaan CI/CD yang dikonfigurasi.
+   Pull requests must pass all configured CI/CD checks.
 
 3. **Merging**
    
-   Setelah ditinjau dan disetujui, pull request Anda akan digabungkan ke branch utama.
+   Once reviewed and approved, your pull request will be merged into the main branch.
 
-## Jenis Kontribusi
+---
 
-### Fitur Baru
+## Types of Contributions
 
-Jika Anda ingin menambahkan fitur baru:
+### New Features
 
-1. Diskusikan fitur dengan maintainer terlebih dahulu dengan membuat issue
-2. Berikan deskripsi rinci tentang fitur yang diusulkan
-3. Jelaskan mengapa fitur ini berguna untuk proyek
+If you want to add a new feature:
 
-### Perbaikan Bug
+1. Discuss the feature with the maintainers first by creating an issue
+2. Provide a detailed description of the proposed feature
+3. Explain why this feature is useful for the project
 
-Untuk memperbaiki bug:
+### Bug Fixes
 
-1. Periksa apakah bug sudah dilaporkan di issues
-2. Jika belum, buat issue baru dengan langkah-langkah untuk mereproduksi bug
-3. Jelaskan perilaku yang diharapkan vs. perilaku aktual
+To fix a bug:
 
-### Dokumentasi
+1. Check if the bug has already been reported in the issues section
+2. If not, create a new issue with steps to reproduce the bug
+3. Describe the expected behavior vs. the actual behavior
 
-Kontribusi dokumentasi sangat dihargai:
+### Documentation
 
-1. Perbaiki kesalahan ketik atau informasi yang tidak akurat
-2. Tambahkan contoh atau penjelasan yang lebih jelas
-3. Tingkatkan kejelasan dan kelengkapan dokumentasi
+Documentation contributions are highly appreciated:
 
-## Setup Pengembangan
+1. Fix typos or inaccurate information
+2. Add examples or clearer explanations
+3. Improve the overall clarity and completeness of the documentation
 
-1. **Persiapan Lingkungan**
+---
+
+## Development Setup
+
+1. **Prepare Environment**
    
    ```bash
    python -m venv venv
@@ -110,36 +120,42 @@ Kontribusi dokumentasi sangat dihargai:
    python manage.py migrate
    ```
 
-3. **Jalankan Server**
+3. **Run the Server**
    
    ```bash
    python manage.py runserver
    ```
 
-## Pengujian
+---
 
-- Tulis unit test untuk setiap fitur baru atau perbaikan
-- Jalankan pengujian sebelum membuat pull request:
+## Testing
+
+- Write unit tests for every new feature or bug fix
+- Run tests before making a pull request:
   ```bash
   python manage.py test
   ```
 
-## Laporan Bug
+---
 
-Jika Anda menemukan bug, mohon buat issue dengan informasi berikut:
+## Bug Reports
 
-- Deskripsi singkat dan jelas tentang bug
-- Langkah-langkah untuk mereproduksi bug
-- Perilaku yang diharapkan
-- Tangkapan layar (jika memungkinkan)
-- Informasi lingkungan (OS, browser, versi Python, versi Django)
+If you find a bug, please create an issue with the following information:
 
-## Kontak
+- A clear and concise description of the bug
+- Steps to reproduce the bug
+- Expected behavior
+- Screenshots (if possible)
+- Environment details (OS, browser, Python version, Django version)
 
-Jika Anda memiliki pertanyaan yang tidak tercakup dalam dokumen ini, silakan hubungi:
+---
 
-- Nama Maintainer: email@example.com
-- Discord: Server Link/Channel
-- Slack: Workspace/Channel
+## Contact
 
-Terima kasih telah berkontribusi pada Django Admin Dashboard!
+If you have any questions that are not covered in this document, feel free to reach out:
+
+- Maintainer Name: ikbaltaqyudin@gmail.com
+
+---
+
+Thank you for contributing to the Django Admin Dashboard!

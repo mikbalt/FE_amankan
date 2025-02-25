@@ -1,111 +1,111 @@
 # Django Admin Dashboard
 
-Sebuah aplikasi frontend untuk admin dashboard yang dibuat dengan Django, terhubung ke API backend Django untuk pengelolaan data.
+A frontend application for an admin dashboard built with Django, connected to a separate Django backend API for data management.
 
-## Deskripsi
+## Description
 
-Django Admin Dashboard adalah aplikasi web yang dirancang untuk memberikan antarmuka admin yang ramah pengguna. Aplikasi ini dibangun dengan Django sebagai framework frontend dan terhubung ke API backend Django terpisah untuk pengelolaan data. Dashboard ini menyediakan tampilan yang intuitif untuk manajemen sistem, melihat data statistik, dan melakukan operasi CRUD.
+Django Admin Dashboard is a web application designed to provide a user-friendly admin interface. It is built with Django as the frontend framework and connected to a separate Django backend API for data management. The dashboard provides an intuitive view for system management, viewing statistical data, and performing CRUD operations.
 
-## Fitur
+## Features
 
-- **Sistem Autentikasi**: Halaman login yang aman dengan validasi input
-- **Dashboard Interaktif**: Tampilan utama dengan statistik dan ringkasan data
-- **Desain Responsif**: Tampilan yang menyesuaikan dengan berbagai ukuran perangkat
-- **Koneksi API**: Integrasi dengan backend Django API
-- **UI Modern**: Antarmuka pengguna yang bersih dan intuitif menggunakan Bootstrap 5
-- **Keamanan**: Pengelolaan sesi dan token otentikasi
+- **Authentication System**: Secure login page with input validation
+- **Interactive Dashboard**: Main view with statistics and data summaries
+- **Responsive Design**: Adapts to various device sizes
+- **API Integration**: Connected to a Django backend API
+- **Modern UI**: Clean and intuitive user interface using Bootstrap 5
+- **Security**: Session management and token authentication
 
-## Screenshot
+## Screenshots
 
-![Login Page](static/images/login-screenshot.png)
-![Dashboard Page](static/images/dashboard-screenshot.png)
+![Login Page](static/images/login-screenshot.png)  
+![Dashboard Page](static/images/dashboard-screenshot.png)  
 
-## Teknologi yang Digunakan
+## Technologies Used
 
 - Django 4.x
 - Bootstrap 5
 - JavaScript
 - HTML5 & CSS3
-- Python Requests (untuk komunikasi API)
-- python-dotenv (untuk variabel lingkungan)
+- Python Requests (for API communication)
+- python-dotenv (for environment variables)
 
-## Prasyarat
+## Prerequisites
 
-- Python 3.8 atau versi lebih baru
+- Python 3.8 or later
 - pip (Python package manager)
-- Backend Django API yang berjalan
+- Running Django Backend API
 
-## Instalasi dan Pengaturan
+## Installation and Setup
 
-1. Clone repositori ini:
+1. Clone this repository:
    ```bash
    git clone https://github.com/yourusername/django-admin-dashboard.git
    cd django-admin-dashboard
    ```
 
-2. Buat dan aktifkan virtual environment:
+2. Create and activate a virtual environment:
    ```bash
    python -m venv venv
    
-   # Untuk Windows
+   # For Windows
    venv\Scripts\activate
    
-   # Untuk Linux/Mac
+   # For Linux/Mac
    source venv/bin/activate
    ```
 
-3. Install dependensi:
+3. Install dependencies:
    ```bash
    pip install -r requirements.txt
    ```
 
-4. Buat file `.env` di direktori root dengan konten berikut:
+4. Create a `.env` file in the root directory with the following content:
    ```
    DEBUG=True
    SECRET_KEY=your-secret-key-here
    API_BASE_URL=http://your-backend-api-url
    ```
 
-5. Jalankan migrasi:
+5. Run migrations:
    ```bash
    python manage.py migrate
    ```
 
-6. Jalankan server pengembangan:
+6. Start the development server:
    ```bash
    python manage.py runserver
    ```
 
-7. Buka browser dan akses `http://127.0.0.1:8000/login/`
+7. Open a browser and visit `http://127.0.0.1:8000/login/`
 
-## Penggunaan
+## Usage
 
-1. Masuk menggunakan kredensial yang valid melalui halaman login
-2. Setelah otentikasi berhasil, Anda akan diarahkan ke dashboard utama
-3. Gunakan sidebar untuk navigasi ke berbagai bagian aplikasi
-4. Logout saat selesai menggunakan sistem
+1. Log in using valid credentials on the login page
+2. Upon successful authentication, you will be redirected to the main dashboard
+3. Use the sidebar for navigation to different parts of the application
+4. Logout when you are done using the system
 
-## Struktur Proyek
+## Project Structure
 
 ```
 admin_dashboard/
 │
-├── admin_dashboard/        # Direktori utama proyek Django
+├── admin_dashboard/        # Main Django project directory
 │   ├── __init__.py
-│   ├── settings.py         # Konfigurasi Django
-│   ├── urls.py             # Konfigurasi URL utama
-│   └── wsgi.py             # Konfigurasi WSGI
+│   ├── settings.py         # Django configuration
+│   ├── urls.py             # Main URL configuration
+│   └── wsgi.py             # WSGI configuration
 │
-├── dashboard/              # Aplikasi dashboard
+├── dashboard/              # Dashboard app
 │   ├── __init__.py
 │   ├── admin.py
 │   ├── apps.py
 │   ├── models.py
 │   ├── tests.py
-│   ├── urls.py             # URL untuk aplikasi dashboard
-│   └── views.py            # View untuk aplikasi dashboard
+│   ├── urls.py             # Dashboard app URLs
+│   └── views.py            # Dashboard app views
 │
-├── static/                 # File statis (CSS, JS, gambar)
+├── static/                 # Static files (CSS, JS, images)
 │   ├── css/
 │   │   ├── login.css
 │   │   └── dashboard.css
@@ -114,61 +114,61 @@ admin_dashboard/
 │   │   └── dashboard.js
 │   └── images/
 │
-├── templates/              # Template HTML
+├── templates/              # HTML templates
 │   └── dashboard/
 │       ├── login.html
 │       └── home.html
 │
-├── .env                    # Variabel lingkungan
+├── .env                    # Environment variables
 ├── .gitignore
 ├── manage.py
 ├── requirements.txt
 └── README.md
 ```
 
-## Pengembangan
+## Development
 
-### Menambahkan Halaman Baru
+### Adding a New Page
 
-1. Buat template HTML baru di `templates/dashboard/`
-2. Tambahkan view baru di `dashboard/views.py`
-3. Tambahkan URL baru di `dashboard/urls.py`
-4. Tambahkan link ke halaman baru di sidebar navigasi
+1. Create a new HTML template in `templates/dashboard/`
+2. Add a new view in `dashboard/views.py`
+3. Add a new URL in `dashboard/urls.py`
+4. Add a link to the new page in the sidebar navigation
 
-### Mengubah Tampilan
+### Changing the UI
 
-1. Edit file CSS di direktori `static/css/`
-2. Jika perlu, tambahkan file CSS baru dan impor di template
+1. Edit CSS files in the `static/css/` directory
+2. If needed, add a new CSS file and import it in the template
 
-### Mengubah Koneksi API
+### Modifying API Connection
 
-Edit fungsi `call_api()` di `dashboard/views.py` untuk mengubah cara aplikasi berkomunikasi dengan API backend.
+Edit the `call_api()` function in `dashboard/views.py` to change how the application communicates with the backend API.
 
 ## Deployment
 
-Untuk deployment ke server produksi:
+For production deployment:
 
-1. Ubah `DEBUG=False` di file `.env`
-2. Gunakan server WSGI seperti Gunicorn
-3. Konfigurasikan Nginx atau Apache sebagai reverse proxy
-4. Pindahkan file statis menggunakan `python manage.py collectstatic`
+1. Set `DEBUG=False` in the `.env` file
+2. Use a WSGI server like Gunicorn
+3. Configure Nginx or Apache as a reverse proxy
+4. Move static files using `python manage.py collectstatic`
 
-## Kontribusi
+## Contribution
 
-Silakan berkontribusi pada proyek ini dengan mengikuti langkah-langkah berikut:
+Feel free to contribute to this project by following these steps:
 
-1. Fork repositori
-2. Buat branch fitur (`git checkout -b feature/AmazingFeature`)
-3. Commit perubahan Anda (`git commit -m 'Add some AmazingFeature'`)
-4. Push ke branch (`git push origin feature/AmazingFeature`)
-5. Buka Pull Request
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
 
-## Lisensi
+## License
 
-Didistribusikan di bawah lisensi MIT. Lihat `LICENSE` untuk informasi lebih lanjut.
+Distributed under the MIT License. See `LICENSE` for more information.
 
-## Kontak
+## Contact
 
-Nama Anda - [@twitter_handle](https://twitter.com/twitter_handle) - email@example.com
+M. Ikbal Taqyudin - [@ikbaltaqyudin](https://twitter.com/twitter_handle) - ikbaltaqyudin@gmail.com
 
-Link Proyek: [https://github.com/yourusername/django-admin-dashboard](https://github.com/yourusername/django-admin-dashboard)
+Project Link: [https://github.com/yourusername/django-admin-dashboard](https://github.com/yourusername/django-admin-dashboard)
